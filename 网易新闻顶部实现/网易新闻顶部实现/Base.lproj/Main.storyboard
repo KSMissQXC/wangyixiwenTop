@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="K7o-KO-AsU">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--耳东新闻-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="CQNewsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Guf-jG-nCQ" userLabel="顶部scrollView">
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="lJI-dB-XdE"/>
+                                </constraints>
+                            </scrollView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8M-bi-hCB" userLabel="内容scrollView">
+                                <rect key="frame" x="0.0" y="108" width="600" height="492"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="YcI-Vx-lnZ"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="n8M-bi-hCB" firstAttribute="top" secondItem="Guf-jG-nCQ" secondAttribute="bottom" id="Rdc-X4-aKf"/>
+                            <constraint firstAttribute="trailing" secondItem="Guf-jG-nCQ" secondAttribute="trailing" id="cnQ-MF-OKO"/>
+                            <constraint firstItem="Guf-jG-nCQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dWG-5X-r8F"/>
+                            <constraint firstItem="n8M-bi-hCB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="nk8-H7-gwD"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="n8M-bi-hCB" secondAttribute="bottom" id="rAF-L6-qiK"/>
+                            <constraint firstAttribute="trailing" secondItem="n8M-bi-hCB" secondAttribute="trailing" id="sna-JY-1Dm"/>
+                            <constraint firstItem="Guf-jG-nCQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="yxF-bg-08c"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="耳东新闻" id="XJ1-Nu-vcv"/>
+                    <connections>
+                        <outlet property="contentScrollView" destination="n8M-bi-hCB" id="XNL-do-I5p"/>
+                        <outlet property="titleScrollView" destination="Guf-jG-nCQ" id="Vo4-QU-eVb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1314" y="209"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="aQK-Gr-l4L">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="K7o-KO-AsU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ws6-hW-yZp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="fRj-Q0-4xW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7kK-XK-LY3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="382" y="424"/>
+        </scene>
+    </scenes>
+</document>
